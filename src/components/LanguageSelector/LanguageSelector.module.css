@@ -1,0 +1,22 @@
+.container {
+	display: flex;
+	gap: 1rem;
+}
+
+.button {
+	background-color: #1a2441;
+	border: none;
+	cursor: pointer;
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: white;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	padding: 0.75rem 2rem;
+	border-radius: 0.5rem;
+	transition: background-color 0.3s ease;
+}
+
+.button:hover {
+	background-color: #6cb0e2;
+}

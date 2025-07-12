@@ -1,0 +1,184 @@
+@property --color-primary {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-100 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-200 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-300 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-400 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-500 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-600 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-700 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-800 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-primary-900 {
+	initial-value: red;
+	syntax: "<color>";
+}
+
+@property --color-grey-start {
+	initial-value: black;
+	syntax: "<color>";
+}
+
+@property --color-grey-end {
+	initial-value: white;
+	syntax: "<color>";
+}
+
+@property --color-grey-100 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+@property --color-grey-200 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+@property --color-grey-300 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+@property --color-grey-400 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+@property --color-grey-500 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+@property --color-grey-600 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+@property --color-grey-700 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+@property --color-grey-800 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+@property --color-grey-900 {
+	initial-value: grey;
+	syntax: "<color>";
+}
+
+:root {
+	--color-primary: #ff007b;
+
+	--color-grey-start: #f0f4f6;
+	--color-grey-end: #121213;
+
+	--color-primary-100: hsl(
+		from var(--color-primary) calc(h - 15) s calc(l * 0.1)
+	);
+	--color-primary-200: hsl(
+		from var(--color-primary) calc(h - 10) s calc(l * 0.3)
+	);
+	--color-primary-300: hsl(
+		from var(--color-primary) calc(h - 5) s calc(l * 0.5)
+	);
+	--color-primary-400: hsl(from var(--color-primary) calc(h) s calc(l * 0.8));
+	--color-primary-500: hsl(from var(--color-primary) h s l);
+	--color-primary-600: hsl(from var(--color-primary) calc(h) s calc(l * 1.2));
+	--color-primary-700: hsl(
+		from var(--color-primary) calc(h + 5) s calc(l * 1.5)
+	);
+	--color-primary-800: hsl(
+		from var(--color-primary) calc(h + 10) s calc(l * 1.7)
+	);
+	--color-primary-900: hsl(
+		from var(--color-primary) calc(h + 15) s calc(l * 1.9)
+	);
+
+	--color-grey-100: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 10%
+	);
+	--color-grey-200: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 20%
+	);
+	--color-grey-300: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 30%
+	);
+	--color-grey-400: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 40%
+	);
+	--color-grey-500: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 50%
+	);
+	--color-grey-600: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 60%
+	);
+	--color-grey-700: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 70%
+	);
+	--color-grey-800: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 80%
+	);
+	--color-grey-900: color-mix(
+		in srgb,
+		var(--color-grey-start),
+		var(--color-grey-end) 90%
+	);
+}
+
+body {
+	background-color: var(--color-grey-start);
+	color: var(--color-grey-end);
+}

@@ -1,0 +1,100 @@
+@property --spacing-base {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --spacing-xxs {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --spacing-xs {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --spacing-sm {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --spacing-md {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --spacing-lg {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --spacing-xl {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --spacing-xxl {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --sizing-xxs {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --sizing-xs {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --sizing-sm {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --sizing-md {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --sizing-lg {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --sizing-xl {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --sizing-xxl {
+	initial-value: 0;
+	syntax: "<length-percentage>";
+}
+
+@property --sizing-base {
+	initial-value: 2rem;
+	syntax: "<length-percentage>";
+}
+
+:root {
+	--spacing-base: 1rem;
+	--sizing-base: 1.5rem;
+
+	--spacing-xxs: calc(var(--spacing-base) * 0.125);
+	--spacing-xs: calc(var(--spacing-base) * 0.25);
+	--spacing-sm: calc(var(--spacing-base) * 0.5);
+	--spacing-md: var(--spacing-base);
+	--spacing-lg: calc(var(--spacing-base) * 2);
+	--spacing-xl: calc(var(--spacing-base) * 4);
+	--spacing-xxl: calc(var(--spacing-base) * 8);
+
+	--sizing-xxs: calc(var(--sizing-base) * 0.125);
+	--sizing-xs: calc(var(--sizing-base) * 0.25);
+	--sizing-sm: calc(var(--sizing-base) * 0.5);
+	--sizing-md: var(--sizing-base);
+	--sizing-lg: calc(var(--sizing-base) * 2);
+	--sizing-xl: calc(var(--sizing-base) * 4);
+	--sizing-xxl: calc(var(--sizing-base) * 8);
+}

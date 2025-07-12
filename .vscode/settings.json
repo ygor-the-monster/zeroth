@@ -1,0 +1,22 @@
+{
+	"auto-rename-tag.activationOnLanguage": [
+		"html",
+		"javascriptreact",
+		"typescriptreact",
+		"*"
+	],
+	"biome.requireConfiguration": true,
+	"biome.suggestInstallingGlobally": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit"
+	},
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		".env": ".env.*",
+		"main.tsx": "providers.tsx, routes.tsx",
+		"package.json": "pnpm-lock.yaml, pnpm-workspace.yaml, .nvmrc",
+		"README.md": "biome.json, .gitignore",
+		"vite.config.ts": "tsconfig.json, index.html, tsconfig.json"
+	}
+}

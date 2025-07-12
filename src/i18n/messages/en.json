@@ -1,0 +1,15 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navigation_env_config": "ENV variables",
+	"navigation_module_federation": "Module Federation",
+	"navigation_request_config": "useRequest Playground",
+	"navigation_startup": "About",
+	"startup_description": "This is a shared React Template for quick scaffolding of front-ends and micro-frontends. It contains minimal boilerplating and follows some principles of clean architecture and code quality.",
+	"startup_table_key": "Variable",
+	"startup_table_value": "Value",
+	"startup_title": "Audibene React Template",
+	"startup_tools_build_tool": "Build Tool",
+	"startup_tools_i18n": "Internationalization",
+	"startup_tools_linter_formatter": "Linter + Formatter",
+	"startup_tools_test_framework": "Tests"
+}

@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+@property --font-sans {
+	initial-value: sans-serif;
+	syntax: "<string>";
+}
+
+@property --font-mono {
+	initial-value: monospace;
+	syntax: "<string>";
+}
+
+@property --font-size-base {
+	initial-value: 16px;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-tiny {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-small {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-p {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-h6 {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-h5 {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-h4 {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-h3 {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-h2 {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+@property --font-size-h1 {
+	initial-value: 1rem;
+	syntax: "<length-percentage>";
+}
+
+:root {
+	--font-sans: "DM Sans", sans-serif;
+	--font-mono: "DM Mono", monospace;
+
+	--font-size-base: clamp(1rem, 0.7845rem + 0.6897vw, 1.25rem);
+
+	--font-size-tiny: calc(var(--font-size-base) * 0.694);
+	--font-size-small: calc(var(--font-size-base) * 0.833);
+	--font-size-p: var(--font-size-base);
+	--font-size-h6: calc(var(--font-size-base) * 1.2);
+	--font-size-h5: calc(var(--font-size-base) * 1.44);
+	--font-size-h4: calc(var(--font-size-base) * 1.728);
+	--font-size-h3: calc(var(--font-size-base) * 2.074);
+	--font-size-h2: calc(var(--font-size-base) * 2.488);
+	--font-size-h1: calc(var(--font-size-base) * 2.986);
+}
+
+body {
+	font-family: var(--font-sans);
+}
+
+h1 {
+	font-size: var(--font-size-h1);
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+}
+
+h4 {
+	font-size: var(--font-size-h4);
+}
+
+h5 {
+	font-size: var(--font-size-h5);
+}
+
+h6 {
+	font-size: var(--font-size-h6);
+}
+
+p {
+	font-size: var(--font-size-p);
+}

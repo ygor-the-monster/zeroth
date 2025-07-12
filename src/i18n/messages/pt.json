@@ -1,0 +1,15 @@
+{
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"navigation_env_config": "Variáveis ENV",
+	"navigation_module_federation": "Federação de Módulos",
+	"navigation_request_config": "usarSolicitar Playground",
+	"navigation_startup": "Sobre",
+	"startup_description": "Este é um modelo React compartilhado para construção rápida de front-ends e micro-front-ends. Ele contém o mínimo de boilerplating e segue alguns princípios de arquitetura limpa e qualidade de código.",
+	"startup_table_key": "Variável",
+	"startup_table_value": "Valor",
+	"startup_title": "Modelo de reação do Audibene",
+	"startup_tools_build_tool": "Ferramenta de construção",
+	"startup_tools_i18n": "Internacionalização",
+	"startup_tools_linter_formatter": "Linter + Formatador",
+	"startup_tools_test_framework": "Testes"
+}
