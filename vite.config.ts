@@ -1,4 +1,5 @@
 import { resolve } from "node:path";
+import { cloudflare } from "@cloudflare/vite-plugin";
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import mdx from "@mdx-js/rollup";
 import react from "@vitejs/plugin-react-oxc";
@@ -35,6 +36,7 @@ export default ({ mode }: { mode: string }) => {
 				strategy: ["globalVariable", "preferredLanguage", "baseLocale"],
 			}),
 			react({}),
+			cloudflare(),
 			mdx(),
 			svgr({
 				svgrOptions: {

@@ -1,7 +1,7 @@
+import { LanguageSelector } from "@components/LanguageSelector";
 import { MDXProvider } from "@mdx-js/react";
 import { Outlet } from "react-router";
 import styles from "./LessonLayout.module.css";
-import { LanguageSelector } from "@components/LanguageSelector";
 
 export function LessonLayout() {
 	return (

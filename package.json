@@ -3,11 +3,10 @@
 		"@acab/reset.css": "^0.11.0",
 		"@mdx-js/react": "^3.1.0",
 		"@mdx-js/rollup": "^3.1.0",
-		"dedent": "^1.6.0",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-router": "^7.6.0",
-		"zod": "^3.25.30"
+		"zod": "^4.0.5"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.0.0",
@@ -26,11 +25,9 @@
 		"vite": "npm:rolldown-vite@latest",
 		"vite-plugin-favicons": "^0.1.7",
 		"vite-plugin-svgr": "^4.3.0",
-		"vite-plugin-webfonts": "^1.0.1",
 		"wrangler": "^4.24.3"
 	},
 	"name": "zeroth-sprint",
-	"packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
 	"pnpm": {
 		"overrides": {
 			"vite": "npm:rolldown-vite@latest"
@@ -41,6 +38,7 @@
 		"build": "pnpm build:prod",
 		"build:dev": "tsgo -p . && vite build --mode development",
 		"build:prod": "tsgo -p . && vite build --mode production",
+		"deploy": "wrangler deploy",
 		"lint": "pnpm lint:types && pnpm lint:check",
 		"lint:check": "biome check --write .",
 		"lint:format": "biome format --write .",
