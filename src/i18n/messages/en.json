@@ -3,17 +3,13 @@
 	"language_selector_button_label": "Switch language",
 	"language_selector_dropdown_button_label": [
 		{
-			"declarations": [
-				"input language"
-			],
-			"selectors": [
-				"language"
-			],
+			"declarations": ["input language"],
 			"match": {
 				"language=*": "Switch to {language}",
-				"language=pt": "Switch to Brazilian Portuguese",
-				"language=en": "Switch to English"
-			}
+				"language=en": "Switch to English",
+				"language=pt": "Switch to Brazilian Portuguese"
+			},
+			"selectors": ["language"]
 		}
 	]
 }

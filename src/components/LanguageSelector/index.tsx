@@ -1,9 +1,9 @@
+import { m } from "@i18n/messages";
 import { getLocale, locales, setLocale } from "@i18n/runtime";
 import { Languages } from "lucide-react";
 import { useCallback, useMemo, useRef, useState } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 import styles from "./LanguageSelector.module.css";
-import { m } from "@i18n/messages";
 
 export function LanguageSelector() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +34,9 @@ export function LanguageSelector() {
 			>
 				{locales.map((locale) => (
 					<button
-						aria-label={m.language_selector_dropdown_button_label({ language: locale })}
+						aria-label={m.language_selector_dropdown_button_label({
+							language: locale,
+						})}
 						className={styles.button}
 						data-current={currentLocale === locale}
 						key={locale}

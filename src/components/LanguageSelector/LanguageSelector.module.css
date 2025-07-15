@@ -22,7 +22,10 @@
 	&[data-open="true"] {
 		scale: 1;
 		visibility: visible;
-		max-height: calc((var(--spacing-lg) + var(--spacing-sm)) * (var(--locales-length) + 1));
+		max-height: calc(
+			(var(--spacing-lg) + var(--spacing-sm)) *
+			(var(--locales-length) + 1)
+		);
 		padding-bottom: var(--spacing-sm);
 
 		transition:

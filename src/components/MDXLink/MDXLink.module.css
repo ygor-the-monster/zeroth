@@ -1,19 +1,11 @@
-.link {
-	position: relative;
-
-	&:hover,
-	&:focus,
-	&:focus-visible {
-		.preview {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
-}
-
 .preview {
 	position: absolute;
-	top: calc(-1 * var(--font-size-tiny) - var(--spacing-md) - var(--preview-offset, 0px));
+	top: calc(
+		-1 *
+		var(--font-size-tiny) -
+		var(--spacing-md) -
+		var(--preview-offset, 0px)
+	);
 	left: 50%;
 	translate: -50% 0;
 
@@ -35,4 +27,17 @@
 	transition:
 		opacity var(--timing-fast) ease-in-out,
 		visibility var(--timing-fast) ease-in-out;
+}
+
+.link {
+	position: relative;
+
+	&:hover,
+	&:focus,
+	&:focus-visible {
+		.preview {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
 }

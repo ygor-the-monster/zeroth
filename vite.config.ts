@@ -16,9 +16,6 @@ export default ({ mode }: { mode: string }) => {
 	metaConfig.init(process.env);
 
 	return defineConfig({
-		optimizeDeps: {
-			exclude: ["@mdx-js/react"],
-		},
 		build: {
 			rollupOptions: {
 				output: {
@@ -30,6 +27,9 @@ export default ({ mode }: { mode: string }) => {
 			sourcemap: appConfig.VITE_SOURCE_MAPS,
 		},
 		envPrefix: appConfig.VITE_ENV_PREFIXES,
+		optimizeDeps: {
+			exclude: ["@mdx-js/react"],
+		},
 		plugins: [
 			paraglideVitePlugin({
 				emitGitIgnore: false,
@@ -41,7 +41,7 @@ export default ({ mode }: { mode: string }) => {
 			react({}),
 			cloudflare(),
 			mdx({
-				providerImportSource: '@mdx-js/react',
+				providerImportSource: "@mdx-js/react",
 			}),
 			svgr({
 				svgrOptions: {

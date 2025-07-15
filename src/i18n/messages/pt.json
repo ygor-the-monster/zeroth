@@ -1,19 +1,15 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"language_selector_button_label": "Mudar idioma",
 	"language_selector_dropdown_button_label": [
 		{
-			"declarations": [
-				"input language"
-			],
-			"selectors": [
-				"language"
-			],
+			"declarations": ["input language"],
 			"match": {
 				"language=*": "Mudar para {language}",
-				"language=pt": "Mudar para Português Brasileiro",
-				"language=en": "Mudar para Inglês"
-			}
+				"language=en": "Mudar para Inglês",
+				"language=pt": "Mudar para Português Brasileiro"
+			},
+			"selectors": ["language"]
 		}
-	],
-	"language_selector_button_label": "Mudar idioma"
+	]
 }

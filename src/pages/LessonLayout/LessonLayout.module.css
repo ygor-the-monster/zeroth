@@ -7,7 +7,71 @@
 	min-height: 100vh;
 	padding: var(--spacing-xxl);
 
-	background-color: var(--color-grey-end);
+	--background-honeycomb-fill: var(--color-grey-end);
+	--background-honeycomb-border: color-mix(
+		in srgb,
+		var(--color-grey-end) 70%,
+		var(--color-grey-900)
+	);
+	--background-honeycomb-size: var(--spacing-md);
+
+	background-color: var(--background-honeycomb-fill);
+	background-image: radial-gradient(
+			circle farthest-side at 0% 50%,
+			var(--background-honeycomb-fill) 23.5%,
+			transparent 0
+		),
+		radial-gradient(
+			circle farthest-side at 0% 50%,
+			var(--background-honeycomb-border) 24%,
+			transparent 0
+		),
+		linear-gradient(
+			var(--background-honeycomb-fill) 14%,
+			transparent 0,
+			transparent 85%,
+			var(--background-honeycomb-fill) 0
+		),
+		linear-gradient(
+			150deg,
+			var(--background-honeycomb-fill) 24%,
+			var(--background-honeycomb-border) 0,
+			var(--background-honeycomb-border) 26%,
+			transparent 0,
+			transparent 74%,
+			var(--background-honeycomb-border) 0,
+			var(--background-honeycomb-border) 76%,
+			var(--background-honeycomb-fill) 0
+		),
+		linear-gradient(
+			30deg,
+			var(--background-honeycomb-fill) 24%,
+			var(--background-honeycomb-border) 0,
+			var(--background-honeycomb-border) 26%,
+			transparent 0,
+			transparent 74%,
+			var(--background-honeycomb-border) 0,
+			var(--background-honeycomb-border) 76%,
+			var(--background-honeycomb-fill) 0
+		),
+		linear-gradient(
+			90deg,
+			var(--background-honeycomb-border) 2%,
+			var(--background-honeycomb-fill) 0,
+			var(--background-honeycomb-fill) 98%,
+			var(--background-honeycomb-border) 0%
+		);
+	background-position:
+		calc(var(--background-honeycomb-size) * 0.5 + 1px)
+		calc(var(--background-honeycomb-size) * 0.75),
+		calc(var(--background-honeycomb-size) * 0.5 - 1px)
+		calc(var(--background-honeycomb-size) * 0.75),
+		0 0,
+		0 0,
+		0 0,
+		0 0;
+	background-size: var(--background-honeycomb-size)
+		calc(var(--background-honeycomb-size) * 1.5);
 }
 
 .article {
