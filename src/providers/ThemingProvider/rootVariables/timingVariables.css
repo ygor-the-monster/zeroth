@@ -1,0 +1,5 @@
+:root {
+	--timing-fast: 100ms;
+	--timing-medium: 250ms;
+	--timing-slow: 750ms;
+}

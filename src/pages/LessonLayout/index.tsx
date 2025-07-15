@@ -1,17 +1,19 @@
 import { LanguageSelector } from "@components/LanguageSelector";
-import { MDXProvider } from "@mdx-js/react";
+import { ArticleProvider } from "@providers/ArticleProvider";
 import { Outlet } from "react-router";
 import styles from "./LessonLayout.module.css";
 
 export function LessonLayout() {
 	return (
-		<MDXProvider>
-			<div className={styles.container}>
-				<article>
+		<div className={styles.wrapper}>
+			<article className={styles.article}>
+				<ArticleProvider>
 					<Outlet />
-				</article>
+				</ArticleProvider>
+			</article>
+			<aside className={styles.aside}>
 				<LanguageSelector />
-			</div>
-		</MDXProvider>
+			</aside>
+		</div>
 	);
 }

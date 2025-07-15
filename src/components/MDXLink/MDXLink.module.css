@@ -1,0 +1,38 @@
+.link {
+	position: relative;
+
+	&:hover,
+	&:focus,
+	&:focus-visible {
+		.preview {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.preview {
+	position: absolute;
+	top: calc(-1 * var(--font-size-tiny) - var(--spacing-md) - var(--preview-offset, 0px));
+	left: 50%;
+	translate: -50% 0;
+
+	white-space: nowrap;
+
+	font-family: var(--font-mono);
+	font-size: 0.625em;
+	background-color: var(--preview-background, var(--color-grey-end));
+
+	color: var(--preview-color, var(--color-grey-start));
+
+	padding-inline: var(--spacing-sm);
+	padding-block: var(--spacing-xs);
+
+	opacity: 0;
+	visibility: hidden;
+
+	pointer-events: none;
+	transition:
+		opacity var(--timing-fast) ease-in-out,
+		visibility var(--timing-fast) ease-in-out;
+}

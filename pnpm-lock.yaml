@@ -20,6 +20,9 @@ importers:
       '@mdx-js/rollup':
         specifier: ^3.1.0
         version: 3.1.0(acorn@8.15.0)(rollup@4.44.1)
+      lucide-react:
+        specifier: ^0.525.0
+        version: 0.525.0(react@19.1.0)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -29,6 +32,9 @@ importers:
       react-router:
         specifier: ^7.6.0
         version: 7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      usehooks-ts:
+        specifier: ^3.1.1
+        version: 3.1.1(react@19.1.0)
       zod:
         specifier: ^4.0.5
         version: 4.0.5
@@ -226,7 +232,7 @@ packages:
   '@cloudflare/vite-plugin@1.9.4':
     resolution: {integrity: sha512-i1sMePamMZs/eR5ennHNICEFEtXWDCbt8j+mSE0EQuMFt0YrqqU9WSCZzUvISyYebnnLfnHZQpq3Y8y4uPz4RQ==}
     peerDependencies:
-      vite: npm:rolldown-vite@latest
+      vite: ^6.1.0 || ^7.0.0
       wrangler: 4.24.3
 
   '@cloudflare/workerd-darwin-64@1.20250709.0':
@@ -1139,7 +1145,7 @@ packages:
     resolution: {integrity: sha512-ONriHoEGQv+ITmeJQsHIpx7u1ms8Z68oIo3AdKCoaBTvZtF+AfDVviQ3tKgCTnIbz9NW8V2Rd/Q+5zjzpsht1g==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
-      vite: npm:rolldown-vite@latest
+      vite: ^6.3.0 || ^7.0.0-beta.0
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1622,6 +1628,9 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
+  lodash.debounce@4.0.8:
+    resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
 
@@ -1630,6 +1639,11 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  lucide-react@0.525.0:
+    resolution: {integrity: sha512-Tm1txJ2OkymCGkvwoHt33Y2JpN5xucVq1slHcgE6Lk0WjDfjgKWor5CdVER8U6DvcfMwh4M8XxmpTiyzfmfDYQ==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -2073,6 +2087,12 @@ packages:
   urlpattern-polyfill@10.1.0:
     resolution: {integrity: sha512-IGjKp/o0NL3Bso1PymYURCJxMPNAf/ILOpendP9f5B6e1rTJgdgiOvgfoT8VxCAdY+Wisb9uhGaJJf3yZ2V9nw==}
 
+  usehooks-ts@3.1.1:
+    resolution: {integrity: sha512-I4diPp9Cq6ieSUH2wu+fDAVQO43xwtulo+fKEidHUwZPnYImbtkTjzIJYcDcJqxgmX31GVqNFURodvcgHcW0pA==}
+    engines: {node: '>=16.15.0'}
+    peerDependencies:
+      react: ^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc
+
   uuid@10.0.0:
     resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
     hasBin: true
@@ -2087,12 +2107,12 @@ packages:
     resolution: {integrity: sha512-JkKXKd3HyjofW0d9Luf++gnvNLfjeAq3E2XxCf/MhSPxtnfChbZjmBRD/Tkqi7w0ChwO0eJNMQeiM9fyBZXN4w==}
     peerDependencies:
       typescript: ^5.8.3
-      vite: npm:rolldown-vite@latest
+      vite: ^6.3.5
 
   vite-plugin-svgr@4.3.0:
     resolution: {integrity: sha512-Jy9qLB2/PyWklpYy0xk0UU3TlU0t2UMpJXZvf+hWII1lAmRHrOUKi11Uw8N3rxoNk7atZNYO3pR3vI1f7oi+6w==}
     peerDependencies:
-      vite: npm:rolldown-vite@latest
+      vite: '>=2.6.0'
 
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
@@ -3492,6 +3512,8 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
+  lodash.debounce@4.0.8: {}
+
   longest-streak@3.1.0: {}
 
   lower-case@2.0.2:
@@ -3501,6 +3523,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lucide-react@0.525.0(react@19.1.0):
+    dependencies:
+      react: 19.1.0
 
   magic-string@0.30.17:
     dependencies:
@@ -4217,6 +4243,11 @@ snapshots:
       picocolors: 1.1.1
 
   urlpattern-polyfill@10.1.0: {}
+
+  usehooks-ts@3.1.1(react@19.1.0):
+    dependencies:
+      lodash.debounce: 4.0.8
+      react: 19.1.0
 
   uuid@10.0.0: {}
 

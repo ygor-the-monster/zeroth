@@ -1,24 +1,49 @@
-import { locales, setLocale } from "@i18n/runtime";
+import { getLocale, locales, setLocale } from "@i18n/runtime";
+import { Languages } from "lucide-react";
+import { useCallback, useMemo, useRef, useState } from "react";
+import { useOnClickOutside } from "usehooks-ts";
 import styles from "./LanguageSelector.module.css";
 
 export function LanguageSelector() {
-	const changeLanguage = (language: (typeof locales)[number]) => {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const ref = useRef<HTMLDivElement>(document.createElement("div"));
+	useOnClickOutside(ref, () => setIsOpen(false));
+
+	const currentLocale = useMemo(() => getLocale(), []);
+	const localesLength = useMemo(() => locales.length, []);
+	const changeLocale = useCallback((language: (typeof locales)[number]) => {
 		setLocale(language);
-	};
+	}, []);
 
 	return (
-		<div className={styles.container}>
-			{locales.map((locale) => (
-				<button
-					aria-label={`Switch to ${locale}`}
-					className={styles.button}
-					key={locale}
-					onClick={() => changeLanguage(locale)}
-					type="button"
-				>
-					{locale}
-				</button>
-			))}
+		<div className={styles.container} ref={ref}>
+			<button
+				aria-label="Switch language"
+				className={styles.button}
+				onClick={() => setIsOpen(!isOpen)}
+				type="button"
+			>
+				<Languages />
+			</button>
+			<div
+				className={styles.dropdown}
+				data-open={isOpen}
+				style={{ "--locales-length": localesLength }}
+			>
+				{locales.map((locale) => (
+					<button
+						aria-label={`Switch to ${locale}`}
+						className={styles.button}
+						data-current={currentLocale === locale}
+						key={locale}
+						onClick={() => changeLocale(locale)}
+						type="button"
+					>
+						{locale}
+					</button>
+				))}
+			</div>
 		</div>
 	);
 }

@@ -16,6 +16,9 @@ export default ({ mode }: { mode: string }) => {
 	metaConfig.init(process.env);
 
 	return defineConfig({
+		optimizeDeps: {
+			exclude: ["@mdx-js/react"],
+		},
 		build: {
 			rollupOptions: {
 				output: {
@@ -33,11 +36,13 @@ export default ({ mode }: { mode: string }) => {
 				emitPrettierIgnore: false,
 				outdir: "./src/i18n/build",
 				project: "./i18n.inlang",
-				strategy: ["globalVariable", "preferredLanguage", "baseLocale"],
+				strategy: ["localStorage", "preferredLanguage", "baseLocale"],
 			}),
 			react({}),
 			cloudflare(),
-			mdx(),
+			mdx({
+				providerImportSource: '@mdx-js/react',
+			}),
 			svgr({
 				svgrOptions: {
 					plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],

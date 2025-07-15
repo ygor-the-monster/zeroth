@@ -4,7 +4,7 @@ import { lazy } from "react";
 import { BrowserRouter, Route, Routes as RouterRoutes } from "react-router";
 
 const Zeroth_00_Project_Requirements = lazy(() =>
-	import(`@posts/00_zeroth/00_project_requirements.${getLocale()}.mdx`).then(
+	import(`@posts/00_zeroth/00_project_requirements/${getLocale()}.mdx`).then(
 		(module) => ({
 			default: module.default,
 		}),
