@@ -9,18 +9,18 @@
 	padding-top: var(--spacing-sm);
 	padding-bottom: 0;
 
-	scale: 0;
+	opacity: 0;
 	visibility: hidden;
 	max-height: 0;
 
 	transition:
-		scale var(--timing-medium) ease-in-out,
+		opacity var(--timing-fast) ease-in-out,
 		max-height var(--timing-medium) ease-in-out,
 		visibility var(--timing-medium) ease-in-out,
 		padding-bottom var(--timing-fast) ease-in-out;
 
 	&[data-open="true"] {
-		scale: 1;
+		opacity: 1;
 		visibility: visible;
 		max-height: calc(
 			(var(--spacing-lg) + var(--spacing-sm)) *
@@ -29,7 +29,7 @@
 		padding-bottom: var(--spacing-sm);
 
 		transition:
-			scale var(--timing-fast) ease-in-out var(--timing-fast),
+			opacity var(--timing-fast) ease-in-out var(--timing-fast),
 			max-height var(--timing-medium) ease-in-out,
 			visibility var(--timing-medium) ease-in-out,
 			padding-bottom var(--timing-fast) ease-in-out;
@@ -50,7 +50,7 @@
 
 	font-size: var(--font-size-tiny);
 	font-weight: bold;
-	color: var(--color-grey-start);
+	color: var(--contrast-color, var(--color-grey-start));
 	text-transform: uppercase;
 	font-family: var(--font-sans);
 
@@ -62,7 +62,7 @@
 	&:focus,
 	&:focus-visible {
 		outline: none;
-		background-color: var(--color-primary-200);
+		background-color: var(--highlight-color, var(--color-primary-200));
 
 		transition:
 			background-color var(--timing-medium) ease-in-out,
@@ -70,19 +70,19 @@
 	}
 
 	&[data-current="true"] {
-		background-color: var(--color-grey-start);
+		background-color: var(--contrast-color, var(--color-grey-start));
 		color: var(--color-primary);
 
 		&:hover,
 		&:focus,
 		&:focus-visible {
 			outline: none;
-			color: var(--color-primary-200);
+			color: var(--highlight-color, var(--color-primary-200));
 		}
 	}
 
 	&:has(+ div[data-open="true"]) {
-		background-color: var(--color-grey-start);
+		background-color: var(--contrast-color, var(--color-grey-start));
 		color: var(--color-primary);
 	}
 }
