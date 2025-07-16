@@ -2,12 +2,12 @@ import { clamp, lerp } from "@utils/interpolationMethods";
 import { useEffect, useRef, useState } from "react";
 import {
 	PARALLAX_BANNER_ANIMATION_SPEED,
-	PARALLAX_BANNER_OUTER_BOUNDS_X,
-	PARALLAX_BANNER_OUTER_BOUNDS_Y,
 	PARALLAX_BANNER_IDLE_AMPLITUDE_X,
 	PARALLAX_BANNER_IDLE_AMPLITUDE_Y,
 	PARALLAX_BANNER_IDLE_FREQUENCY_X,
 	PARALLAX_BANNER_IDLE_FREQUENCY_Y,
+	PARALLAX_BANNER_OUTER_BOUNDS_X,
+	PARALLAX_BANNER_OUTER_BOUNDS_Y,
 } from "./ParallaxBanner.consts";
 import styles from "./ParallaxBanner.module.css";
 import type {
@@ -92,7 +92,10 @@ export function ParallaxBanner({ background, layers }: ParallaxBannerProps) {
 			if (!animationTimeRef.current) animationTimeRef.current = time;
 
 			const deltaTime = time - animationTimeRef.current;
-			const lerpSpeed = Math.min((deltaTime / 1000) * PARALLAX_BANNER_ANIMATION_SPEED, 1);
+			const lerpSpeed = Math.min(
+				(deltaTime / 1000) * PARALLAX_BANNER_ANIMATION_SPEED,
+				1,
+			);
 
 			const lerpX = lerp(
 				cameraPositionX,
@@ -105,8 +108,16 @@ export function ParallaxBanner({ background, layers }: ParallaxBannerProps) {
 				lerpSpeed,
 			);
 
-			const clampedX = clamp(lerpX, 0 - PARALLAX_BANNER_OUTER_BOUNDS_X, 100 + PARALLAX_BANNER_OUTER_BOUNDS_X);
-			const clampedY = clamp(lerpY, 0 - PARALLAX_BANNER_OUTER_BOUNDS_Y, 100 + PARALLAX_BANNER_OUTER_BOUNDS_Y);
+			const clampedX = clamp(
+				lerpX,
+				0 - PARALLAX_BANNER_OUTER_BOUNDS_X,
+				100 + PARALLAX_BANNER_OUTER_BOUNDS_X,
+			);
+			const clampedY = clamp(
+				lerpY,
+				0 - PARALLAX_BANNER_OUTER_BOUNDS_Y,
+				100 + PARALLAX_BANNER_OUTER_BOUNDS_Y,
+			);
 
 			setCameraPositionX(clampedX);
 			setCameraPositionY(clampedY);
@@ -183,8 +194,8 @@ export function ParallaxBanner({ background, layers }: ParallaxBannerProps) {
 							height: `${layer.size.height}%`,
 							left: `${getLayerPosition(layer).x}%`,
 							top: `${getLayerPosition(layer).y}%`,
+							transform: `translate(${getLayerTranslation(layer.anchor).x}%, ${getLayerTranslation(layer.anchor).y}%) translateZ(${layer.depth}px)`,
 							width: `${layer.size.width}%`,
-							transform: `translate(${getLayerTranslation(layer.anchor).x}%, ${getLayerTranslation(layer.anchor).y}%) translateZ(${layer.depth}px)`
 						}}
 					/>
 				))}

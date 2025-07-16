@@ -1,28 +1,20 @@
-import { getLocale } from "@i18n/runtime";
-import { LessonLayout } from "@pages/LessonLayout";
-import { lazy } from "react";
-import { BrowserRouter, Route, Routes as RouterRoutes } from "react-router";
-
-const Zeroth_00_Banner = lazy(() =>
-	import(`@posts/00_zeroth/banner.tsx`).then((module) => ({
-		default: module.Banner,
-	})),
-);
-const Zeroth_00_Project_Requirements = lazy(() =>
-	import(`@posts/00_zeroth/00_project_requirements/${getLocale()}.mdx`).then(
-		(module) => ({
-			default: module.default,
-		}),
-	),
-);
+import { Routes as Zeroth_00 } from "@posts/00_zeroth/routing";
+import {
+	BrowserRouter,
+	Navigate,
+	Route,
+	Routes as RouterRoutes,
+} from "react-router";
 
 export function Routes() {
 	return (
 		<BrowserRouter>
 			<RouterRoutes>
-				<Route element={<LessonLayout banner={<Zeroth_00_Banner />} />} path="/">
-					<Route element={<Zeroth_00_Project_Requirements />} path="/"/>
-				</Route>
+				<Route
+					element={<Navigate replace to="/00_zeroth/00_project_introduction" />}
+					path="/"
+				/>
+				{Zeroth_00}
 			</RouterRoutes>
 		</BrowserRouter>
 	);

@@ -1,6 +1,6 @@
 .wrapper {
 	min-height: 100vh;
-	
+
 	--background-honeycomb-fill: var(--color-grey-end);
 	--background-honeycomb-border: color-mix(
 		in srgb,
@@ -75,9 +75,11 @@
 		0 0,
 		100% 0,
 		100% calc(100% - var(--sizing-xl)),
-		calc(90% + var(--sizing-lg) / 2) calc(100% - var(--sizing-xl)),		
-		calc(90% - var(--sizing-lg) / 2) calc(100% - var(--sizing-xl) + var(--sizing-lg)),
-		calc(70% + var(--sizing-lg) / 2) calc(100% - var(--sizing-xl) + var(--sizing-lg)),
+		calc(90% + var(--sizing-lg) / 2) calc(100% - var(--sizing-xl)),
+		calc(90% - var(--sizing-lg) / 2)
+			calc(100% - var(--sizing-xl) + var(--sizing-lg)),
+		calc(70% + var(--sizing-lg) / 2)
+			calc(100% - var(--sizing-xl) + var(--sizing-lg)),
 		calc(70% - var(--sizing-lg) / 2) calc(100% - var(--sizing-xl)),
 		calc(40% + var(--sizing-xl) / 2) calc(100% - var(--sizing-xl)),
 		calc(40% - var(--sizing-xl) / 2) 100%,
@@ -92,7 +94,11 @@
 		position: absolute;
 		inset: 0;
 		background-color: var(--color-primary);
-		background-image: radial-gradient(circle at top right, var(--color-primary-700), var(--color-primary));
+		background-image: radial-gradient(
+			circle at top right,
+			var(--color-primary-700),
+			var(--color-primary)
+		);
 		opacity: 0.85;
 		mix-blend-mode: screen;
 		pointer-events: none;
@@ -106,10 +112,12 @@
 		left: 40%;
 		width: var(--sizing-lg);
 		height: var(--sizing-lg);
-		transform: skewX(-45deg) translate(calc(-100% - var(--spacing-md)), calc(var(--spacing-xl) * -1));
+		transform: skewX(-45deg)
+			translate(calc(-100% - var(--spacing-md)), calc(var(--spacing-xl) * -1));
 		background-color: var(--color-primary);
 		pointer-events: none;
-		box-shadow: calc((var(--spacing-md) + var(--sizing-lg)) * -1) 0 0 0 var(--color-primary);
+		box-shadow: calc((var(--spacing-md) + var(--sizing-lg)) * -1) 0 0 0
+			var(--color-primary);
 	}
 }
 
@@ -140,7 +148,11 @@
 	padding-inline: var(--spacing-xl);
 
 	@media (max-width: 740px) {
-		padding-inline-start: calc(var(--spacing-lg) + var(--spacing-md) + var(--sizing-md));
+		padding-inline-start: calc(
+			var(--spacing-lg) +
+			var(--spacing-md) +
+			var(--sizing-md)
+		);
 		padding-inline-end: var(--spacing-lg);
 		margin-block-start: calc(var(--spacing-xl) * -1.5);
 	}
