@@ -1,3 +1,4 @@
+import { NotFoundPage } from "@pages/NotFoundPage";
 import { Routes as Zeroth_00 } from "@posts/00_zeroth/routing";
 import {
 	BrowserRouter,
@@ -15,6 +16,7 @@ export function Routes() {
 					path="/"
 				/>
 				{Zeroth_00}
+				<Route element={<NotFoundPage />} path="*" />
 			</RouterRoutes>
 		</BrowserRouter>
 	);
