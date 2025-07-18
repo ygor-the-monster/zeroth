@@ -1,7 +1,8 @@
 import { getLocale } from "@i18n/runtime";
 import { LessonLayout } from "@pages/LessonLayout";
+import { ProjectLayout } from "@pages/ProjectLayout";
 import { lazy } from "react";
-import { Navigate, Route } from "react-router";
+import { Route } from "react-router";
 import { Banner } from "./banner";
 
 const Zeroth_00_Project_Requirements = lazy(() =>
@@ -14,10 +15,7 @@ const Zeroth_00_Project_Requirements = lazy(() =>
 
 export const Routes = (
 	<>
-		<Route
-			element={<Navigate replace to="/00_zeroth/00_project_introduction" />}
-			path="00_zeroth"
-		/>
+		<Route element={<ProjectLayout banner={<Banner />} />} path="00_zeroth" />
 		<Route element={<LessonLayout banner={<Banner />} />} path="00_zeroth/*">
 			<Route
 				element={<Zeroth_00_Project_Requirements />}

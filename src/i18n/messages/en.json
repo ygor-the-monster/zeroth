@@ -11,5 +11,12 @@
 			},
 			"selectors": ["language"]
 		}
-	]
+	],
+	"share_buttons_button_label": "Share this page.",
+	"share_buttons_copy_button_label": "Copy link",
+	"share_buttons_copy_toast_error_message": "Failed to copy link to clipboard!",
+	"share_buttons_copy_toast_message": "Link copied to clipboard!",
+	"share_buttons_whatsapp_button_label": "Share on WhatsApp",
+	"share_buttons_whatsapp_message": "Check this out: {url}",
+	"share_buttons_x_button_label": "Share on X"
 }

@@ -70,6 +70,7 @@
 
 .banner {
 	position: relative;
+	height: 50vmin;
 
 	clip-path: polygon(
 		0 0,
@@ -128,15 +129,13 @@
 	gap: var(--spacing-md);
 
 	padding: var(--spacing-xxl);
+	padding-inline: var(--spacing-md);
 	padding-block-start: 0;
 	margin-block-start: calc(var(--spacing-xl) * -1);
 
-	@media (max-width: 960px) {
-		padding-inline: var(--spacing-lg);
-	}
-
 	@media (max-width: 740px) {
 		flex-direction: column-reverse;
+		padding-inline: var(--spacing-sm);
 	}
 }
 
@@ -166,11 +165,6 @@
 		0 0
 	);
 
-	::selection {
-		background-color: var(--color-primary);
-		color: var(--color-grey-start);
-	}
-
 	h1,
 	h2,
 	h3 {
@@ -186,11 +180,12 @@
 
 		border-bottom-color: var(--color-primary);
 		padding-bottom: var(--spacing-lg);
+		font-size: calc(var(--font-size-h1) * var(--font-multiplier));
 	}
 
 	h2 {
 		color: var(--color-grey-500);
-		font-size: var(--font-size-h4);
+		font-size: calc(var(--font-size-h4) * var(--font-multiplier));
 
 		border-bottom-color: var(--color-grey-100);
 		padding-bottom: var(--spacing-md);
@@ -199,6 +194,7 @@
 	p {
 		margin-block: var(--spacing-md);
 		line-height: 1.75;
+		font-size: calc(var(--font-size-p) * var(--font-multiplier));
 	}
 
 	a {
@@ -212,12 +208,21 @@
 			background-color var(--timing-medium) ease-in-out,
 			color var(--timing-medium) ease-in-out;
 
+		&::selection {
+			color: var(--color-grey-end);
+		}
+
 		&:hover,
 		&:focus,
 		&:focus-visible {
 			background-color: var(--color-primary);
 			color: var(--color-grey-start);
 		}
+	}
+
+	::selection {
+		background-color: var(--color-primary);
+		color: var(--color-grey-start);
 	}
 }
 
