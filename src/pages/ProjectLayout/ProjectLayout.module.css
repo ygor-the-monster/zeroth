@@ -7,6 +7,10 @@
 	padding-block-start: calc(var(--spacing-xxl) + var(--sizing-xxl));
 	padding-block-end: var(--spacing-xxl);
 	padding-inline: var(--spacing-xxl);
+
+	@media (max-width: 960px) {
+		padding-inline: var(--spacing-sm);
+	}
 }
 
 .banner {

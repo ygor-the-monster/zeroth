@@ -2,6 +2,11 @@
 	position: relative;
 	display: flex;
 	align-items: flex-end;
+
+	@media (max-width: 740px) {
+		flex-direction: column-reverse;
+		align-items: stretch;
+	}
 }
 
 .number {
@@ -24,6 +29,10 @@
 		100% 100%,
 		0 100%
 	);
+
+	@media (max-width: 740px) {
+		aspect-ratio: unset;
+	}
 }
 
 .content {
@@ -42,5 +51,10 @@
 		font-weight: 200;
 		letter-spacing: 0.03em;
 		color: var(--color-grey-start);
+	}
+
+	@media (max-width: 740px) {
+		padding-inline: var(--spacing-lg);
+		text-align: center;
 	}
 }
