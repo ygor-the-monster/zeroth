@@ -8,21 +8,6 @@ import { Banner } from "./Banner";
 
 const lessons: Post[] = await makePostImports("00_zeroth", [
 	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
-	"00_project_introduction",
 ]);
 
 export const Routes = [
