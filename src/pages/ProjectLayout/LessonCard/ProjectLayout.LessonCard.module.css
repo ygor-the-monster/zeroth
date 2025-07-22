@@ -1,0 +1,48 @@
+.container {
+	display: grid;
+	grid-template-columns: var(--sizing-xl) max-content;
+	grid-template-rows: min-content min-content;
+	grid-template-areas:
+		"number title"
+		"number description";
+	gap: var(--spacing-sm) var(--spacing-lg);
+
+	padding: var(--spacing-md) var(--spacing-lg);
+	transition: background-color var(--timing-fast) ease-in-out;
+	text-decoration: none;
+
+	clip-path: polygon(
+		0 var(--sizing-md),
+		var(--sizing-md) 0,
+		100% 0,
+		100% calc(100% - var(--sizing-lg)),
+		calc(100% - var(--sizing-lg)) 100%,
+		0 100%
+	);
+
+	&:hover,
+	&:focus {
+		outline: none;
+		background-color: var(--color-primary);
+	}
+}
+
+.number {
+	grid-area: number;
+	align-self: center;
+	font-family: var(--font-mono);
+	font-size: calc(var(--font-size-h1) * 1.5);
+	font-weight: 900;
+}
+.title {
+	grid-area: title;
+	font-size: var(--font-size-p);
+	font-weight: 900;
+
+	align-self: end;
+}
+.description {
+	grid-area: description;
+	font-size: var(--font-size-tiny);
+	align-self: start;
+}

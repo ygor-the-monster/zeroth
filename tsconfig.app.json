@@ -3,7 +3,6 @@
 		"allowImportingTsExtensions": true,
 		"allowJs": true,
 
-		"baseUrl": ".",
 		"jsx": "react-jsx",
 		"lib": ["ESNext", "DOM", "DOM.Iterable"],
 		"module": "ESNext",
@@ -16,15 +15,15 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"paths": {
-			"@assets/*": ["src/assets/*"],
-			"@components/*": ["src/components/*"],
-			"@config/*": ["src/config/*"],
-			"@hooks/*": ["src/hooks/*"],
-			"@i18n/*": ["src/i18n/build/*"],
-			"@pages/*": ["src/pages/*"],
-			"@posts/*": ["src/posts/*"],
-			"@providers/*": ["src/providers/*"],
-			"@utils/*": ["src/utils/*"]
+			"@assets/*": ["./src/assets/*"],
+			"@components/*": ["./src/components/*"],
+			"@config/*": ["./src/config/*"],
+			"@hooks/*": ["./src/hooks/*"],
+			"@i18n/*": ["./src/i18n/build/*"],
+			"@pages/*": ["./src/pages/*"],
+			"@posts/*": ["./src/posts/*"],
+			"@providers/*": ["./src/providers/*"],
+			"@utils/*": ["./src/utils/*"]
 		},
 		"skipLibCheck": true,
 

@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, RefObject } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./HoverLabelProvider.module.css";
 import type { HoverLabel, HoverLabelElement } from "./HoverLabelProvider.types";
@@ -23,10 +23,13 @@ export function HoverLabelProvider({ children }: Readonly<PropsWithChildren>) {
 
 				timeoutRef.current = setTimeout(() => {
 					const id = crypto.randomUUID();
+					const elementRef: RefObject<HoverLabelElement> = {
+						current: target as HoverLabelElement,
+					};
 					setHoverLabels((prev) => [
 						...prev,
 						{
-							elementRef: { current: target as HoverLabelElement },
+							elementRef,
 							id,
 							label,
 						},

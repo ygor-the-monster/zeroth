@@ -2,6 +2,7 @@
 	position: relative;
 	min-height: 100vh;
 	overflow-x: hidden;
+	overflow-y: visible;
 
 	padding-block-start: calc(var(--spacing-xxl) + var(--sizing-xxl));
 	padding-block-end: var(--spacing-xxl);
@@ -25,75 +26,40 @@
 	}
 }
 
-.header {
-	position: relative;
-}
-
 .container {
 	position: relative;
 	margin: auto;
+	overflow: visible;
 }
 
-.header {
+.content {
+	position: relative;
 	display: flex;
-	align-items: flex-end;
-
-	.header_number {
-		font-family: var(--font-mono);
-		font-size: calc(var(--font-size-h1) * 3);
-		font-weight: 900;
-		aspect-ratio: 1 / 1;
-		line-height: normal;
-		padding-block-start: var(--spacing-lg);
-		padding-inline-start: var(--spacing-lg);
-		padding-inline-end: calc(var(--spacing-md) + var(--spacing-lg));
-
-		background-color: var(--color-primary);
-		color: var(--color-grey-start);
-
-		clip-path: polygon(
-			0 0,
-			calc(100% - var(--spacing-xl)) 0,
-			100% var(--spacing-xl),
-			100% 100%,
-			0 100%
-		);
-	}
-
-	.header_content {
-		padding-inline-start: var(--spacing-xl);
-		padding-block: var(--spacing-lg);
-
-		h1 {
-			font-size: calc(var(--font-size-h1) * 1.5);
-			font-weight: 700;
-			color: var(--color-primary);
-		}
-
-		p {
-			font-size: var(--font-size-h6);
-			font-family: var(--font-mono);
-			font-weight: 200;
-			letter-spacing: 0.03em;
-			color: var(--color-grey-start);
-		}
-	}
+	gap: var(--spacing-xl);
+	padding: var(--spacing-xl) var(--spacing-lg);
+	padding-inline-end: var(--spacing-xxl);
+	background-color: var(--color-grey-start);
 }
 
-.nav {
+.grid {
+	flex: 1;
 	display: grid;
 	grid-template-columns: repeat(
 			auto-fill,
 			minmax(calc(var(--sizing-xxl) * 2), 1fr)
 		);
 	gap: var(--spacing-xl);
-
-	padding: var(--spacing-lg);
-	padding-block-start: var(--spacing-xxl);
-	padding-block-end: var(--spacing-xl);
 	margin: 0;
 
 	list-style: none;
+}
 
-	background-color: var(--color-grey-start);
+.actions {
+	position: fixed;
+	height: min-content;
+	width: fit-content;
+	z-index: 100;
+
+	--contrast-color: var(--color-grey-end);
+	--highlight-color: var(--color-primary-700);
 }

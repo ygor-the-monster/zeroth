@@ -3,10 +3,10 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router";
 import { useLocalStorage } from "usehooks-ts";
 import styles from "./LessonLayout.module.css";
-import { LessonLayoutSideActions } from "./LessonLayout.SideActions";
 import type { LessonLayoutProps } from "./LessonLayout.types";
+import { LessonLayoutSideActions } from "./SideActions/LessonLayout.SideActions";
 
-export function LessonLayout({ banner, content, metadata }: LessonLayoutProps) {
+export function LessonLayout({ banner, ArticleMDX, title }: LessonLayoutProps) {
 	const [fontSize, setFontSize] = useLocalStorage("article:fontSize", 1);
 	const navigate = useNavigate();
 
@@ -34,8 +34,8 @@ export function LessonLayout({ banner, content, metadata }: LessonLayoutProps) {
 					style={{ "--font-multiplier": fontSize }}
 				>
 					<ArticleProvider>
-						<h1 className={styles.title}>{metadata.title}</h1>
-						{content}
+						<h1 className={styles.title}>{title}</h1>
+						<ArticleMDX />
 					</ArticleProvider>
 				</article>
 				<aside className={styles.aside}>

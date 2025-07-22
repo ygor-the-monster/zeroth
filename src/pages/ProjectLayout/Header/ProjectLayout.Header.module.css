@@ -1,0 +1,46 @@
+.container {
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+}
+
+.number {
+	font-family: var(--font-mono);
+	font-size: calc(var(--font-size-h1) * 3);
+	font-weight: 900;
+	aspect-ratio: 1 / 1;
+	line-height: normal;
+	padding-block-start: var(--spacing-lg);
+	padding-inline-start: var(--spacing-lg);
+	padding-inline-end: calc(var(--spacing-md) + var(--spacing-lg));
+
+	background-color: var(--color-primary);
+	color: var(--color-grey-start);
+
+	clip-path: polygon(
+		0 0,
+		calc(100% - var(--spacing-xl)) 0,
+		100% var(--spacing-xl),
+		100% 100%,
+		0 100%
+	);
+}
+
+.content {
+	padding-inline-start: var(--spacing-xl);
+	padding-block: var(--spacing-lg);
+
+	h1 {
+		font-size: calc(var(--font-size-h1) * 1.5);
+		font-weight: 700;
+		color: var(--color-primary);
+	}
+
+	p {
+		font-size: var(--font-size-h6);
+		font-family: var(--font-mono);
+		font-weight: 200;
+		letter-spacing: 0.03em;
+		color: var(--color-grey-start);
+	}
+}

@@ -1,5 +1,5 @@
 import { NotFoundPage } from "@pages/NotFoundPage";
-import { Routes as Zeroth_00 } from "@posts/00_zeroth/routing";
+import { Routes as Zeroth_00 } from "@posts/00_zeroth/Routes";
 import {
 	BrowserRouter,
 	Navigate,
