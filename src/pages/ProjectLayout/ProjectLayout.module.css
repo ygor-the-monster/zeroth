@@ -44,7 +44,6 @@
 		font-weight: 900;
 		aspect-ratio: 1 / 1;
 		line-height: normal;
-
 		padding-block-start: var(--spacing-lg);
 		padding-inline-start: var(--spacing-lg);
 		padding-inline-end: calc(var(--spacing-md) + var(--spacing-lg));

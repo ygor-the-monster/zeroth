@@ -22,6 +22,7 @@ export function ActionGroupButton({
 			<button
 				aria-label={display.label}
 				className={`${styles.button} ${className ?? ""}`}
+				data-hover-label={display.label}
 				onClick={() => setIsOpen(!isOpen)}
 				{...(data &&
 					Object.entries(data).map(([key, value]) => ({
@@ -40,6 +41,7 @@ export function ActionGroupButton({
 					<button
 						aria-label={action.display.label}
 						className={`${styles.button} ${action.className ?? ""}`}
+						data-hover-label={action.display.label}
 						key={action.key}
 						onClick={action.action}
 						{...(action.data &&
@@ -66,6 +68,7 @@ export function ActionButton({
 		<button
 			aria-label={display.label}
 			className={`${styles.button} ${className ?? ""}`}
+			data-hover-label={display.label}
 			onClick={action}
 			{...(data &&
 				Object.entries(data).map(([key, value]) => ({

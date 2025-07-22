@@ -1,5 +1,9 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"back_to_project_button_label": "Back to project",
+	"font_size_buttons_decrease_label": "Decrease font size",
+	"font_size_buttons_increase_label": "Increase font size",
+	"font_size_buttons_label": "Font size",
 	"language_selector_button_label": "Switch language",
 	"language_selector_dropdown_button_label": [
 		{
@@ -12,6 +16,7 @@
 			"selectors": ["language"]
 		}
 	],
+	"scroll_to_top_button_label": "Scroll to top",
 	"share_buttons_button_label": "Share this page.",
 	"share_buttons_copy_button_label": "Copy link",
 	"share_buttons_copy_toast_error_message": "Failed to copy link to clipboard!",

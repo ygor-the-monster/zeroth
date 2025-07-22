@@ -3,6 +3,8 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import mdx from "@mdx-js/rollup";
 import react from "@vitejs/plugin-react-oxc";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import { defineConfig, loadEnv } from "vite";
 import { faviconsPlugin } from "vite-plugin-favicons";
 import svgr from "vite-plugin-svgr";
@@ -42,6 +44,10 @@ export default ({ mode }: { mode: string }) => {
 			cloudflare(),
 			mdx({
 				providerImportSource: "@mdx-js/react",
+				remarkPlugins: [
+					remarkFrontmatter,
+					[remarkMdxFrontmatter, { default: {} }],
+				],
 			}),
 			svgr({
 				svgrOptions: {

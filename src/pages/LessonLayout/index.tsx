@@ -1,15 +1,29 @@
 import { ArticleProvider } from "@providers/ArticleProvider";
-import { Outlet } from "react-router";
+import { useCallback } from "react";
+import { useNavigate } from "react-router";
 import { useLocalStorage } from "usehooks-ts";
 import styles from "./LessonLayout.module.css";
 import { LessonLayoutSideActions } from "./LessonLayout.SideActions";
 import type { LessonLayoutProps } from "./LessonLayout.types";
 
-export function LessonLayout({ banner }: LessonLayoutProps) {
+export function LessonLayout({ banner, content, metadata }: LessonLayoutProps) {
 	const [fontSize, setFontSize] = useLocalStorage("article:fontSize", 1);
+	const navigate = useNavigate();
 
-	const increaseFontSize = () => setFontSize(Math.min(fontSize + 0.1, 1.5));
-	const decreaseFontSize = () => setFontSize(Math.max(fontSize - 0.1, 0.5));
+	const increaseFontSize = useCallback(
+		() => setFontSize(Math.min(fontSize + 0.1, 1.5)),
+		[fontSize, setFontSize],
+	);
+	const decreaseFontSize = useCallback(
+		() => setFontSize(Math.max(fontSize - 0.1, 0.5)),
+		[fontSize, setFontSize],
+	);
+
+	const backToProject = useCallback(() => {
+		const path = window.location.pathname;
+		const projectId = path.split("/")[1];
+		navigate(`/${projectId}`);
+	}, [navigate]);
 
 	return (
 		<div className={styles.wrapper}>
@@ -20,11 +34,13 @@ export function LessonLayout({ banner }: LessonLayoutProps) {
 					style={{ "--font-multiplier": fontSize }}
 				>
 					<ArticleProvider>
-						<Outlet />
+						<h1 className={styles.title}>{metadata.title}</h1>
+						{content}
 					</ArticleProvider>
 				</article>
 				<aside className={styles.aside}>
 					<LessonLayoutSideActions
+						backToProject={backToProject}
 						decreaseFontSize={decreaseFontSize}
 						increaseFontSize={increaseFontSize}
 					/>

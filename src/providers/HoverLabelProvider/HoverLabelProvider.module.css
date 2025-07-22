@@ -1,0 +1,27 @@
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.hoverLabelContainer {
+	position: fixed;
+	inset: 0;
+
+	z-index: 1000;
+	pointer-events: none;
+}
+
+.hoverLabel {
+	position: absolute;
+	background-color: var(--color-grey-end);
+	padding: var(--spacing-xs);
+	color: var(--color-grey-start);
+	font-family: var(--font-mono);
+	font-size: calc(var(--font-size-tiny) * 0.8);
+	animation: fadeIn var(--timing-fast) ease;
+	translate: -50% -100%;
+}
