@@ -1,23 +1,22 @@
-import { getLocale } from "@i18n/runtime";
 import { LessonLayout } from "@pages/LessonLayout";
 import { ProjectLayout } from "@pages/ProjectLayout";
 import type { ReactNode } from "react";
 import { Route } from "react-router";
 import type { Post } from "./makePostRouting.types";
+import { getLocale, type Locale } from "@i18n/runtime";
 
 export const makePostImports = async (
-	project: string,
-	posts: string[],
+	posts: [string, { [key in Locale]: typeof import("*.mdx") }][],
 ): Promise<Post[]> => {
 	return await Promise.all(
 		posts.map(async (post) => {
-			const postPath = `../../posts/${project}/${post}/${getLocale()}.mdx`;
-			const postModule = await import(postPath /* @vite-ignore */);
+			const postModule = post[1][getLocale()];
 			return {
 				ArticleMDX: postModule.default,
 				metadata: {
-					...postModule.frontmatter,
-					path: post,
+					title: postModule.frontmatter.title,
+					description: postModule.frontmatter.description,
+					path: post[0],
 				},
 			};
 		}),
