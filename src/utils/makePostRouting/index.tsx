@@ -3,7 +3,7 @@ import { LessonLayout } from "@pages/LessonLayout";
 import { ProjectLayout } from "@pages/ProjectLayout";
 import type { ReactNode } from "react";
 import { Route } from "react-router";
-import type { Post } from "./makePostRouting.types";
+import type { Post, Project } from "./makePostRouting.types";
 
 export const makePostImports = async (
 	posts: [string, { [key in Locale]: typeof import("*.mdx") }][],
@@ -24,7 +24,7 @@ export const makePostImports = async (
 };
 
 export const makePostRoutes = (
-	project: string,
+	project: Project,
 	posts: Post[],
 	Banner: ReactNode,
 ): ReactNode[] => {
@@ -38,13 +38,13 @@ export const makePostRoutes = (
 				/>
 			}
 			key={post.metadata.path}
-			path={`/${project}/${post.metadata.path}`}
+			path={`/${project.path}/${post.metadata.path}`}
 		/>
 	));
 };
 
 export const makeProjectRoute = (
-	project: string,
+	project: Project,
 	posts: Post[],
 	Banner: ReactNode,
 ): ReactNode => {
@@ -53,15 +53,18 @@ export const makeProjectRoute = (
 			element={
 				<ProjectLayout
 					banner={Banner}
+					description={project.description}
 					lessons={posts.map((post) => ({
 						description: post.metadata.description,
 						path: post.metadata.path ?? "#",
 						title: post.metadata.title,
 					}))}
+					number={project.number}
+					title={project.title}
 				/>
 			}
-			key={project}
-			path={`/${project}`}
+			key={project.path}
+			path={`/${project.path}`}
 		/>
 	);
 };

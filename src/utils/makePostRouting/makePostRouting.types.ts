@@ -10,3 +10,10 @@ export type Post = {
 	ArticleMDX: MDXContent;
 	metadata: PostMetadata;
 };
+
+export type Project = {
+	path: string;
+	number: number;
+	title: string;
+	description: string;
+};

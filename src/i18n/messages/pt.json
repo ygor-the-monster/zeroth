@@ -27,5 +27,10 @@
 	"font_size_buttons_decrease_label": "Diminuir o tamanho da fonte",
 	"font_size_buttons_increase_label": "Aumentar o tamanho da fonte",
 	"font_size_buttons_label": "Tamanho da fonte",
-	"scroll_to_top_button_label": "Voltar ao topo"
+	"scroll_to_top_button_label": "Voltar ao topo",
+	"page_not_found_title": "Página não encontrada",
+	"page_not_found_message": "Desculpe, a página que você está procurando não existe ou foi movida.",
+	"button_go_home": "Ir para home",
+	"00_zeroth_project_title": "Zeroth Sprint",
+	"00_zeroth_project_description": "Um diretório de projetos / plataforma de blog"
 }

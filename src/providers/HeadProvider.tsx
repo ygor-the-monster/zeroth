@@ -1,5 +1,6 @@
 import faviconLinks from "virtual:favicons";
 import { useMetaConfig } from "@hooks/useConfig";
+import { getLocale } from "@i18n/runtime";
 import { type PropsWithChildren, useEffect, useMemo } from "react";
 
 export function HeadProvider({ children }: Readonly<PropsWithChildren>) {
@@ -37,6 +38,8 @@ export function HeadProvider({ children }: Readonly<PropsWithChildren>) {
 			meta.setAttribute("content", HEAD_DESCRIPTION);
 			document.head.appendChild(meta);
 		}
+
+		document.documentElement.lang = getLocale();
 	}, [head, HEAD_DESCRIPTION, HEAD_TITLE]);
 
 	return children;

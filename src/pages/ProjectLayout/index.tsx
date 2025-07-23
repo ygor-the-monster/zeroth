@@ -5,7 +5,13 @@ import styles from "./ProjectLayout.module.css";
 import type { ProjectLayoutProps } from "./ProjectLayout.types";
 import { ProjectLayoutSideActions } from "./SideActions/ProjectLayout.SideActions";
 
-export function ProjectLayout({ banner, lessons }: ProjectLayoutProps) {
+export function ProjectLayout({
+	banner,
+	lessons,
+	number,
+	title,
+	description,
+}: ProjectLayoutProps) {
 	useEffect(() => {
 		const actions = document.querySelector(`.${styles.actions}`) as HTMLElement;
 		const container = document.querySelector(
@@ -37,7 +43,11 @@ export function ProjectLayout({ banner, lessons }: ProjectLayoutProps) {
 		<div className={styles.wrapper}>
 			<div className={styles.banner}>{banner}</div>
 			<main className={styles.container}>
-				<ProjectLayoutHeader />
+				<ProjectLayoutHeader
+					description={description}
+					number={number}
+					title={title}
+				/>
 				<div className={styles.content}>
 					<ul className={styles.grid}>
 						{lessons.map((lesson, idx) => (

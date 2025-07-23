@@ -8,5 +8,8 @@ export type Lesson = {
 
 export type ProjectLayoutProps = {
 	banner: ReactNode;
+	number: number;
+	title: string;
+	description: string;
 	lessons: Lesson[];
 };

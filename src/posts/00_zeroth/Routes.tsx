@@ -1,12 +1,23 @@
+import { m } from "@i18n/messages";
 import {
 	makePostImports,
 	makePostRoutes,
 	makeProjectRoute,
 } from "@utils/makePostRouting";
-import type { Post } from "@utils/makePostRouting/makePostRouting.types";
+import type {
+	Post,
+	Project,
+} from "@utils/makePostRouting/makePostRouting.types";
 import * as projectIntroductionEN from "./00_project_introduction/en.mdx";
 import * as projectIntroductionPT from "./00_project_introduction/pt.mdx";
 import { Banner } from "./Banner";
+
+const project: Project = {
+	description: m["00_zeroth_project_description"](),
+	number: 0,
+	path: "00_zeroth",
+	title: m["00_zeroth_project_title"](),
+};
 
 const lessons: Post[] = await makePostImports([
 	[
@@ -16,6 +27,6 @@ const lessons: Post[] = await makePostImports([
 ]);
 
 export const Routes = [
-	makeProjectRoute("00_zeroth", lessons, <Banner />),
-	...makePostRoutes("00_zeroth", lessons, <Banner />),
+	makeProjectRoute(project, lessons, <Banner />),
+	...makePostRoutes(project, lessons, <Banner />),
 ];
