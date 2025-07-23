@@ -46,7 +46,7 @@
 		"build": "pnpm build:prod",
 		"build:dev": "vite build --mode development",
 		"build:prod": "vite build --mode production",
-		"deploy": "pnpm build && pnpm deploy:pages",
+		"deploy": "pnpm build && pnpm build && pnpm deploy:pages",
 		"deploy:pages": "wrangler deploy",
 		"dev": "pnpm run \"/^dev:.*/\"",
 		"dev:app": "vite --mode development",

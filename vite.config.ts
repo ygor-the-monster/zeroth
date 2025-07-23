@@ -41,7 +41,7 @@ export default ({ mode }: { mode: string }) => {
 				strategy: ["localStorage", "preferredLanguage", "baseLocale"],
 			}),
 			react({}),
-			cloudflare(),
+			cloudflare({}),
 			mdx({
 				providerImportSource: "@mdx-js/react",
 				remarkPlugins: [
@@ -54,7 +54,7 @@ export default ({ mode }: { mode: string }) => {
 					plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
 				},
 			}),
-			faviconsPlugin({
+			{...faviconsPlugin({
 				appDescription: metaConfig.HEAD_DESCRIPTION,
 				appName: metaConfig.HEAD_TITLE,
 				background: metaConfig.HEAD_THEME_COLOR,
@@ -62,6 +62,8 @@ export default ({ mode }: { mode: string }) => {
 				path: "/",
 				theme_color: metaConfig.HEAD_THEME_COLOR,
 			}),
+			enforce: "pre"
+		}
 		],
 		preview: {
 			port: appConfig.VITE_APP_PORT,
