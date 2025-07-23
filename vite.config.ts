@@ -7,8 +7,10 @@ import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import { defineConfig, loadEnv } from "vite";
 import { faviconsPlugin } from "vite-plugin-favicons";
+import viteImagemin from "vite-plugin-imagemin";
 import svgr from "vite-plugin-svgr";
 import { appConfig } from "./src/config/AppConfig";
+import { buildConfig } from "./src/config/BuildConfig";
 import { metaConfig } from "./src/config/MetaConfig";
 
 // https://vite.dev/config/
@@ -16,6 +18,7 @@ export default ({ mode }: { mode: string }) => {
 	process.env = { ...process.env, ...loadEnv(mode, "./", "") };
 	appConfig.init(process.env);
 	metaConfig.init(process.env);
+	buildConfig.init(process.env);
 
 	return defineConfig({
 		build: {
@@ -26,7 +29,7 @@ export default ({ mode }: { mode: string }) => {
 					},
 				},
 			},
-			sourcemap: appConfig.VITE_SOURCE_MAPS,
+			sourcemap: buildConfig.BUILD_SOURCE_MAPS,
 		},
 		envPrefix: appConfig.VITE_ENV_PREFIXES,
 		optimizeDeps: {
@@ -49,12 +52,26 @@ export default ({ mode }: { mode: string }) => {
 					[remarkMdxFrontmatter, { default: {} }],
 				],
 			}),
+			viteImagemin({
+				optipng: buildConfig.BUILD_OPTIMIZE_PNG
+					? {
+							optimizationLevel: buildConfig.BUILD_OPTIMIZE_PNG_LEVEL,
+						}
+					: false,
+				pngquant: buildConfig.BUILD_OPTIMIZE_PNG
+					? {
+							speed: buildConfig.BUILD_OPTIMIZE_PNG_SPEED,
+							strip: buildConfig.BUILD_OPTIMIZE_PNG_STRIP,
+						}
+					: false,
+				svgo: false,
+			}),
 			svgr({
 				svgrOptions: {
 					plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
 				},
 			}),
-			{...faviconsPlugin({
+			faviconsPlugin({
 				appDescription: metaConfig.HEAD_DESCRIPTION,
 				appName: metaConfig.HEAD_TITLE,
 				background: metaConfig.HEAD_THEME_COLOR,
@@ -62,8 +79,6 @@ export default ({ mode }: { mode: string }) => {
 				path: "/",
 				theme_color: metaConfig.HEAD_THEME_COLOR,
 			}),
-			enforce: "pre"
-		}
 		],
 		preview: {
 			port: appConfig.VITE_APP_PORT,

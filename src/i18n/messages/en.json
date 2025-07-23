@@ -1,27 +1,31 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"back_to_project_button_label": "Back to project",
-	"font_size_buttons_decrease_label": "Decrease font size",
-	"font_size_buttons_increase_label": "Increase font size",
-	"font_size_buttons_label": "Font size",
 	"language_selector_button_label": "Switch language",
 	"language_selector_dropdown_button_label": [
 		{
-			"declarations": ["input language"],
+			"declarations": [
+				"input language"
+			],
+			"selectors": [
+				"language"
+			],
 			"match": {
 				"language=*": "Switch to {language}",
 				"language=en": "Switch to English",
 				"language=pt": "Switch to Brazilian Portuguese"
-			},
-			"selectors": ["language"]
+			}
 		}
 	],
-	"scroll_to_top_button_label": "Scroll to top",
-	"share_buttons_button_label": "Share this page.",
+	"share_buttons_button_label": "Share this page",
 	"share_buttons_copy_button_label": "Copy link",
 	"share_buttons_copy_toast_error_message": "Failed to copy link to clipboard!",
 	"share_buttons_copy_toast_message": "Link copied to clipboard!",
 	"share_buttons_whatsapp_button_label": "Share on WhatsApp",
 	"share_buttons_whatsapp_message": "Check this out: {url}",
-	"share_buttons_x_button_label": "Share on X"
+	"share_buttons_x_button_label": "Share on X",
+	"back_to_project_button_label": "Back to project",
+	"font_size_buttons_decrease_label": "Decrease font size",
+	"font_size_buttons_increase_label": "Increase font size",
+	"font_size_buttons_label": "Font size",
+	"scroll_to_top_button_label": "Scroll to top"
 }

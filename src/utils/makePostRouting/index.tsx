@@ -1,9 +1,9 @@
+import { getLocale, type Locale } from "@i18n/runtime";
 import { LessonLayout } from "@pages/LessonLayout";
 import { ProjectLayout } from "@pages/ProjectLayout";
 import type { ReactNode } from "react";
 import { Route } from "react-router";
 import type { Post } from "./makePostRouting.types";
-import { getLocale, type Locale } from "@i18n/runtime";
 
 export const makePostImports = async (
 	posts: [string, { [key in Locale]: typeof import("*.mdx") }][],
@@ -14,9 +14,9 @@ export const makePostImports = async (
 			return {
 				ArticleMDX: postModule.default,
 				metadata: {
-					title: postModule.frontmatter.title,
 					description: postModule.frontmatter.description,
 					path: post[0],
+					title: postModule.frontmatter.title,
 				},
 			};
 		}),

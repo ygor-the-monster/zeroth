@@ -16,7 +16,7 @@
 		".env": ".env.*",
 		"main.tsx": "providers.tsx, routes.tsx",
 		"package.json": "pnpm-lock.yaml, pnpm-workspace.yaml, .nvmrc",
-		"README.md": "biome.json, .gitignore",
+		"README.md": "biome.json, .gitignore, lint-translation.sh",
 		"tsconfig.json": "tsconfig.*.json",
 		"vite.config.ts": "index.html"
 	}

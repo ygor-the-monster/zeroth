@@ -1,6 +1,5 @@
 import { z } from "zod/v4-mini";
 import { zStringArray } from "../../utils/zodExtensions/zStringArray";
-import { zStringBool } from "../../utils/zodExtensions/zStringBool";
 
 export const AppConfigMode = {
 	DEVELOPMENT: "development",
@@ -17,11 +16,6 @@ export const appConfigSchema = z.object({
 		.number()
 		.check(z.minimum(1), z.maximum(65535), z.int()),
 	VITE_ENV_PREFIXES: z.union([zStringArray(), z.array(z.string())]),
-	VITE_SOURCE_MAPS: z.union([
-		zStringBool(),
-		z.literal("inline"),
-		z.literal("hidden"),
-	]),
 });
 
 export type AppConfig = z.infer<typeof appConfigSchema>;
