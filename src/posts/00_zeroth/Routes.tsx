@@ -13,10 +13,10 @@ import * as projectIntroductionPT from "./00_project_introduction/pt.mdx";
 import { Banner } from "./Banner";
 
 const project: Project = {
-	description: m["00_zeroth_project_description"](),
+	description: m["00_zeroth_project.description"](),
 	number: 0,
 	path: "00_zeroth",
-	title: m["00_zeroth_project_title"](),
+	title: m["00_zeroth_project.title"](),
 };
 
 const lessons: Post[] = await makePostImports([

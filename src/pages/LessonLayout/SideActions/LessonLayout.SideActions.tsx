@@ -1,5 +1,6 @@
 import { ActionButton, ActionGroupButton } from "@components/ActionButton";
 import { LanguageSelector } from "@components/LanguageSelector";
+import { ScrollToTopButton } from "@components/ScrollToTopButton";
 import { ShareButtons } from "@components/ShareButtons";
 import { m } from "@i18n/messages";
 import {
@@ -7,9 +8,7 @@ import {
 	AArrowUp,
 	ALargeSmall,
 	ArrowLeftToLine,
-	ArrowUpToLine,
 } from "lucide-react";
-import { useCallback } from "react";
 import type { LessonLayoutSideActionsProps } from "./LessonLayout.SideActions.types";
 
 export function LessonLayoutSideActions({
@@ -17,18 +16,11 @@ export function LessonLayoutSideActions({
 	decreaseFontSize,
 	backToProject,
 }: LessonLayoutSideActionsProps) {
-	const scrollToTop = useCallback(() => {
-		window.scrollTo({
-			behavior: "smooth",
-			top: 0,
-		});
-	}, []);
-
 	const IncreaseFontSizeAction = {
 		action: increaseFontSize,
 		display: {
 			icon: <AArrowUp />,
-			label: m.font_size_buttons_increase_label(),
+			label: m["font_size_buttons.increase_label"](),
 		},
 		key: "increase",
 	};
@@ -36,7 +28,7 @@ export function LessonLayoutSideActions({
 		action: decreaseFontSize,
 		display: {
 			icon: <AArrowDown />,
-			label: m.font_size_buttons_decrease_label(),
+			label: m["font_size_buttons.decrease_label"](),
 		},
 		key: "decrease",
 	};
@@ -47,7 +39,7 @@ export function LessonLayoutSideActions({
 				action={backToProject}
 				display={{
 					icon: <ArrowLeftToLine />,
-					label: m.back_to_project_button_label(),
+					label: m["back_to_project_button.button_label"](),
 				}}
 			/>
 			<LanguageSelector />
@@ -56,16 +48,10 @@ export function LessonLayoutSideActions({
 				actions={[IncreaseFontSizeAction, DecreaseFontSizeAction]}
 				display={{
 					icon: <ALargeSmall />,
-					label: m.font_size_buttons_label(),
+					label: m["font_size_buttons.button_label"](),
 				}}
 			/>
-			<ActionButton
-				action={scrollToTop}
-				display={{
-					icon: <ArrowUpToLine />,
-					label: m.scroll_to_top_button_label(),
-				}}
-			/>
+			<ScrollToTopButton />
 		</>
 	);
 }

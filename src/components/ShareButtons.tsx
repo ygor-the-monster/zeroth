@@ -23,7 +23,7 @@ export function ShareButtons({
 
 	const shareWhatsapp = useCallback(() => {
 		window.open(
-			`https://wa.me/?text=${encodeURIComponent(m.share_buttons_whatsapp_message({ url: window.location.href }))}`,
+			`https://wa.me/?text=${encodeURIComponent(m["share_buttons.whatsapp_button.message"]({ url: window.location.href }))}`,
 			"_blank",
 		);
 	}, []);
@@ -33,13 +33,13 @@ export function ShareButtons({
 			.then(() => {
 				addToast({
 					icon: <ClipboardCopy />,
-					message: m.share_buttons_copy_toast_message(),
+					message: m["share_buttons.copy_button.toast_message"](),
 				});
 			})
 			.catch(() => {
 				addToast({
 					icon: <ClipboardX />,
-					message: m.share_buttons_copy_toast_error_message(),
+					message: m["share_buttons.copy_button.toast_error_message"](),
 				});
 			});
 	}, [addToast, copy]);
@@ -51,7 +51,7 @@ export function ShareButtons({
 					action: shareX,
 					display: {
 						icon: <SiX />,
-						label: m.share_buttons_x_button_label(),
+						label: m["share_buttons.x_button.button_label"](),
 					},
 					key: "x",
 				},
@@ -59,7 +59,7 @@ export function ShareButtons({
 					action: shareWhatsapp,
 					display: {
 						icon: <SiWhatsapp />,
-						label: m.share_buttons_whatsapp_button_label(),
+						label: m["share_buttons.whatsapp_button.button_label"](),
 					},
 					key: "whatsapp",
 				},
@@ -67,7 +67,7 @@ export function ShareButtons({
 					action: copyLink,
 					display: {
 						icon: <Link2 />,
-						label: m.share_buttons_copy_button_label(),
+						label: m["share_buttons.copy_button.button_label"](),
 					},
 					key: "copy",
 				},
@@ -76,7 +76,7 @@ export function ShareButtons({
 			data={data}
 			display={{
 				icon: <Share2 />,
-				label: m.share_buttons_button_label(),
+				label: m["share_buttons.button_label"](),
 			}}
 		/>
 	);

@@ -7,14 +7,14 @@ export function NotFoundPage() {
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.code}>404</h1>
-			<h2 className={styles.title}>{m.page_not_found_title()}</h2>
-			<p className={styles.message}>{m.page_not_found_message()}</p>
+			<h2 className={styles.title}>{m["page_not_found.title"]()}</h2>
+			<p className={styles.message}>{m["page_not_found.message"]()}</p>
 			<button
 				className={styles.button}
 				onClick={() => navigate("/")}
 				type="button"
 			>
-				{m.button_go_home()}
+				{m["page_not_found.go_home_button"]()}
 			</button>
 		</div>
 	);

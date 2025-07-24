@@ -1,36 +1,52 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"language_selector_button_label": "Mudar idioma",
-	"language_selector_dropdown_button_label": [
-		{
-			"declarations": [
-				"input language"
-			],
-			"selectors": [
-				"language"
-			],
-			"match": {
-				"language=*": "Mudar para {language}",
-				"language=en": "Mudar para Inglês",
-				"language=pt": "Mudar para Português Brasileiro"
+	"00_zeroth_project": {
+		"description": "Um diretório de projetos / plataforma de blog",
+		"title": "Zeroth Sprint"
+	},
+	"back_to_project_button": {
+		"button_label": "Voltar para o projeto"
+	},
+	"font_size_buttons": {
+		"button_label": "Tamanho da fonte",
+		"decrease_label": "Diminuir o tamanho da fonte",
+		"increase_label": "Aumentar o tamanho da fonte"
+	},
+	"language_selector": {
+		"button_label": "Mudar idioma",
+		"dropdown_button_label": [
+			{
+				"declarations": ["input language"],
+				"match": {
+					"language=*": "Mudar para {language}",
+					"language=en": "Mudar para inglês",
+					"language=pt": "Mudar para português"
+				},
+				"selectors": ["language"]
 			}
+		]
+	},
+	"page_not_found": {
+		"go_home_button": "Ir para home",
+		"message": "Desculpe, a página que você está procurando não existe ou foi movida.",
+		"title": "Página não encontrada"
+	},
+	"scroll_to_top_button": {
+		"button_label": "Rolar para o topo"
+	},
+	"share_buttons": {
+		"button_label": "Compartilhar esta página",
+		"copy_button": {
+			"button_label": "Copiar link",
+			"toast_error_message": "Falha ao copiar o link para a área de transferência!",
+			"toast_message": "Link copiado para a área de transferência!"
+		},
+		"whatsapp_button": {
+			"button_label": "Compartilhar no WhatsApp",
+			"message": "Dá uma olhada nisso: {url}"
+		},
+		"x_button": {
+			"button_label": "Compartilhar no X"
 		}
-	],
-	"share_buttons_button_label": "Compartilhar",
-	"share_buttons_copy_button_label": "Copiar link",
-	"share_buttons_copy_toast_error_message": "Erro ao copiar o link para a área de transferência!",
-	"share_buttons_copy_toast_message": "Link copiado para a área de transferência!",
-	"share_buttons_whatsapp_button_label": "Compartilhar no WhatsApp",
-	"share_buttons_whatsapp_message": "Olha esse projeto: {url}",
-	"share_buttons_x_button_label": "Compartilhar no X",
-	"back_to_project_button_label": "Voltar ao projeto",
-	"font_size_buttons_decrease_label": "Diminuir o tamanho da fonte",
-	"font_size_buttons_increase_label": "Aumentar o tamanho da fonte",
-	"font_size_buttons_label": "Tamanho da fonte",
-	"scroll_to_top_button_label": "Voltar ao topo",
-	"page_not_found_title": "Página não encontrada",
-	"page_not_found_message": "Desculpe, a página que você está procurando não existe ou foi movida.",
-	"button_go_home": "Ir para home",
-	"00_zeroth_project_title": "Zeroth Sprint",
-	"00_zeroth_project_description": "Um diretório de projetos / plataforma de blog"
+	}
 }

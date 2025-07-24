@@ -58,6 +58,7 @@
 		"dev": "pnpm run \"/^dev:.*/\"",
 		"dev:app": "vite --mode development",
 		"dev:formatter": "onchange -i \"src/*.tsx\" \"src/**/*.(ts|tsx|css|json)\" -- biome check --write \"{{file}}\"",
+		"dev:translations": "onchange -i \"src/i18n/messages/*.json\" -- sh lint-translation.sh {{file}}",
 		"dev:typescript": "tsgo -p tsconfig.app.json --watch --noEmit",
 		"lint": "pnpm lint:types && pnpm lint:check && pnpm lint:translations",
 		"lint:check": "biome check --write .",

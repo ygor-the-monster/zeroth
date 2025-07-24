@@ -10,6 +10,7 @@ export function LanguageSelector({
 	className,
 	data,
 }: Pick<ActionGroupButtonProps, "className" | "data">) {
+	console.log(m);
 	const languages = useMemo(
 		() =>
 			locales.map((locale) => ({
@@ -17,7 +18,7 @@ export function LanguageSelector({
 				className: locale === getLocale() ? styles.currentButton : undefined,
 				display: {
 					icon: <>{locale}</>,
-					label: m.language_selector_dropdown_button_label({
+					label: m["language_selector.dropdown_button_label"]({
 						language: locale,
 					}),
 				},
@@ -33,7 +34,7 @@ export function LanguageSelector({
 			data={data}
 			display={{
 				icon: <Languages />,
-				label: m.language_selector_button_label(),
+				label: m["language_selector.button_label"](),
 			}}
 		/>
 	);
