@@ -196,6 +196,52 @@
 		font-size: calc(var(--font-size-h4) * var(--font-multiplier));
 	}
 
+	em {
+		font-style: normal;
+		font-family: var(--font-mono);
+		letter-spacing: -0.01em;
+	}
+
+	blockquote {
+		position: relative;
+		background-color: var(--color-primary-800);
+		color: var(--color-primary-200);
+		padding: var(--spacing-lg) var(--spacing-xxl);
+
+		/* biome-ignore-start lint/style/noDescendingSpecificity: ??? */
+		&::before,
+		&::after {
+			position: absolute;
+			z-index: 0;
+			line-height: 1;
+			height: var(--sizing-xxl);
+			font-size: var(--sizing-xxl);
+			font-family: var(--font-sans);
+			letter-spacing: -0.05em;
+			color: var(--color-primary-900);
+		}
+
+		&::before {
+			top: 0;
+			left: var(--spacing-md);
+			content: "\2018\2018";
+		}
+
+		&::after {
+			bottom: var(--spacing-md);
+			right: var(--spacing-lg);
+			content: "\201A\201A";
+		}
+		/* biome-ignore-end lint/style/noDescendingSpecificity: ??? */
+
+		p {
+			position: relative;
+			z-index: 1;
+			margin: 0;
+			font-size: calc(var(--font-size-small) * var(--font-multiplier));
+		}
+	}
+
 	p {
 		margin-block: var(--spacing-md);
 		line-height: 1.75;
@@ -228,6 +274,22 @@
 	::selection {
 		background-color: var(--color-primary);
 		color: var(--color-grey-start);
+	}
+
+	ul {
+		margin-block: var(--spacing-md);
+		padding-inline-start: var(--spacing-md);
+		list-style-type: disc;
+		list-style-position: outside;
+
+		::marker {
+			color: var(--color-primary);
+		}
+	}
+
+	li {
+		line-height: 1.75;
+		margin-block: var(--spacing-md);
 	}
 }
 

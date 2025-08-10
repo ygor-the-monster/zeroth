@@ -1,6 +1,6 @@
 .container {
 	display: grid;
-	grid-template-columns: var(--sizing-xl) max-content;
+	grid-template-columns: var(--sizing-xl) 1fr;
 	grid-template-rows: min-content min-content;
 	grid-template-areas:
 		"number title"
